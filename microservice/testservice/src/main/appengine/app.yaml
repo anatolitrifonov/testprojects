@@ -1,0 +1,17 @@
+runtime: java
+env: flex
+
+runtime_config:  # To select Java 8:
+  jdk: openjdk8
+
+handlers:
+- url: /.*
+  script: this field is required, but ignored
+
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: 1
+  # I know that 1.5 worked ok last time.
+  memory_gb: 0.7

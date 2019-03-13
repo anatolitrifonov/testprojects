@@ -1,0 +1,4 @@
+**/target/
+
+# Never add anything called credentials to git
+*credential*.json
