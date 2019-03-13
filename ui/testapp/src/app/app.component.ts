@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 //import { Observable, throwError, of } from 'rxjs';
 //import { catchError, retry } from 'rxjs/operators';
 
@@ -28,7 +28,19 @@ export class AppComponent {
   onClick() {
     this.supercontent = 'clicked!';
 
-    this.httpClient.get<string>('https://mynewnvv.appspot.com/hello') //, httpOptions)
+const options: {
+            headers?: HttpHeaders,
+            observe?: 'body',
+            params?: HttpParams,
+            reportProgress?: boolean,
+            responseType: 'text',
+            withCredentials?: boolean
+        } = {
+            responseType: 'text'
+        };
+
+    this.httpClient.get('https://nvvtestbackend.appspot.com/hello', options )
+    //this.httpClient.get<string>('https://nvvtestbackend.appspot.com/hello') //, httpOptions)
       .pipe(
         //tap(_ => console.log(`fetched product id=${id}`)),
         //catchError(this.handleError<Partner>(`getPartner id=${id}`))
