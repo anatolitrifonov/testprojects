@@ -16,4 +16,4 @@ resources:
   # I know that 1.5 worked ok last time.
   memory_gb: 0.7
 
-servicename: hello
+service: hello
